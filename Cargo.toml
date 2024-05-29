@@ -1,0 +1,18 @@
+[package]
+name = "zero2prod"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+
+[[bin]]
+path = "src/main.rs"
+name = "zero2prod"
+
+[dependencies]
+axum = "0.7.5"
+reqwest = "0.12.4"
+serde = { version = "1.0.203", features = ["serde_derive"] }
+tokio = { version = "1.37.0", features = ["full"] }
