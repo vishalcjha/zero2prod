@@ -1,14 +1,9 @@
 pub mod configuration;
 pub mod routes;
 pub mod startup;
-use axum::{
-    extract::Query,
-    http::StatusCode,
-    routing::{get, post},
-    Form, Router,
-};
+pub mod state;
+use axum::extract::Query;
 use serde::Deserialize;
-use tokio::net::TcpListener;
 
 #[derive(Debug, Deserialize)]
 struct GreetQuery {
