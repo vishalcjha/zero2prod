@@ -4,6 +4,9 @@ pub mod startup;
 pub mod state;
 use axum::extract::Query;
 use serde::Deserialize;
+mod di;
+mod registeries;
+mod telemetry;
 
 #[derive(Debug, Deserialize)]
 struct GreetQuery {

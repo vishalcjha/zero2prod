@@ -12,6 +12,13 @@ pub struct SubscriberInfo {
     pub email: String,
 }
 
+#[tracing::instrument(
+    name = "Adding a new subscriber",
+    skip(app_state, subscriber_info),
+    fields(request_id = %Uuid::new_v4(),
+    subscriber_email = %subscriber_info.email,
+    subscriber_name = %subscriber_info.name)
+)]
 pub async fn subscribe(
     State(app_state): State<AppState>,
     Form(subscriber_info): Form<SubscriberInfo>,
