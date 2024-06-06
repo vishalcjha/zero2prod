@@ -5,6 +5,7 @@ pub mod state;
 use axum::extract::Query;
 use serde::Deserialize;
 mod di;
+mod domain;
 mod registeries;
 mod telemetry;
 
